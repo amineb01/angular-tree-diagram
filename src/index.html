@@ -7,7 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body >
   <app-root></app-root>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $("body").on('click', 'span.add', event => {
+      var addBtn = event.toElement.parentNode.parentElement.parentElement.parentNode.parentNode.children[2]
+      addBtn.click()
+      var items = $('.tree-element-main .buttons');
+      for (var i = 0; i < items.length; i++) {
+        if(!items[i].lastChild.classList.contains('nav')){
+          items[i].insertAdjacentHTML("beforeend", '<nav class="nav"> <input type="checkbox" class="nav__cb" id="menu-cb'+i+'"/> <div class="nav__content"> <ul class="nav__items"><li class="nav__item"> <span class="nav__item-text delete"> supprimer </span> </li> <li class="nav__item" > <span class="nav__item-text add" "> Ajouter </span> </li> </ul> </div> <label class="nav__btn" for="menu-cb'+i+'"></label> </nav>'); 
+
+        }
+
+      }
+    })
+      
+    $("body").on('click', 'span.delete', event => {
+      var deleteBtn = event.toElement.parentNode.parentElement.parentElement.parentNode.parentNode.children[0]
+      deleteBtn.click()
+      var items = $('.tree-element-main .buttons');
+      for (var i = 0; i < items.length; i++) {
+        if(!items[i].lastChild.classList.contains('nav')){
+          items[i].insertAdjacentHTML("beforeend", '<nav class="nav"> <input type="checkbox" class="nav__cb" id="menu-cb'+i+'"/> <div class="nav__content"> <ul class="nav__items"><li class="nav__item"> <span class="nav__item-text delete"> supprimer </span> </li> <li class="nav__item" > <span class="nav__item-text add" "> Ajouter </span> </li> </ul> </div> <label class="nav__btn" for="menu-cb'+i+'"></label> </nav>'); 
+
+        }
+      }
+    })
+
+    </script>
+    
 </body>
 </html>

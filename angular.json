@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "treeAngular"
+    }
+  },
+  "defaultProject": "treeAngular",
+  "cli": {
+    "analytics": false
+  }
 }
