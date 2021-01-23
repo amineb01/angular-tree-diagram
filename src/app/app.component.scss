@@ -12,6 +12,18 @@
     margin: 0;
     padding: 0;
   }
+
+  div.add, div.delete{
+    display: none;
+  }
+
+  tree-diagram{
+    transform: rotate(90deg);
+    span{
+        transform: rotate(-90deg);
+        display: inline-block !important;
+    }
+  }
   
   
   
